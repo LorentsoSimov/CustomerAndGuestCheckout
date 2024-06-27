@@ -7,6 +7,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -24,7 +25,7 @@ public class GuestCheckoutTest {
 
     @AfterMethod
     public void tearDown() {
-        driver.quit();
+       // driver.quit();
     }
 
     @Test
@@ -65,6 +66,9 @@ public class GuestCheckoutTest {
         continueButtonPaymentMethod.click();
         WebElement confirmOrderButton = wait.until(ExpectedConditions.elementToBeClickable(By.id("button-confirm")));
         confirmOrderButton.click();
+        String confirmOrderButtonAttribute = confirmOrderButton.getAttribute("value");
+        Assert.assertEquals(confirmOrderButtonAttribute,"Loading...");
+
 
 
     }
