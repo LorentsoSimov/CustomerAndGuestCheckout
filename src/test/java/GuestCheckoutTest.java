@@ -63,7 +63,7 @@ public class GuestCheckoutTest {
         termsAndConditionsCheckbox.click();
         WebElement continueButtonPaymentMethod = driver.findElement(By.id("button-payment-method"));
         continueButtonPaymentMethod.click();
-        WebElement confirmOrderButton = wait.until(ExpectedConditions.elementToBeClickable(By.id("button-confirm")));
+        WebElement confirmOrderButton = wait.until(ExpectedConditions.elementToBeClickable(By.id("buttttton-confirm")));
         confirmOrderButton.click();
 
 
